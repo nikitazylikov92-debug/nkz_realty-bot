@@ -164,9 +164,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(assistant_message)
 
     except Exception as e:
-        logger.error(f"Ошибка при обращении к Claude: {e}")
-        await update.message.reply_text(
-            "😔 Что-то пошло не так. Попробуйте ещё раз или напишите /reset"
+    logger.error(f"Ошибка при обращении к Claude: {type(e).__name__}: {e}")
+    raise
         )
 
 
