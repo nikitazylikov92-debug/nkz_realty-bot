@@ -166,7 +166,6 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     except Exception as e:
     logger.error(f"Ошибка при обращении к Claude: {type(e).__name__}: {e}")
     raise
-        )
 
 
 def main():
